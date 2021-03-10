@@ -1,3 +1,5 @@
+const { SequelizeScopeError } = require("sequelize/lib/errors");
+const { Sequelize } = require("../models");
 var db = require("../models");
 
 module.exports = function(app){
@@ -11,9 +13,10 @@ module.exports = function(app){
           }).then(function (dbUser) {
             return res.json(dbUser);
           });
+        
         }
       });
-
+      
       app.post("/api/new", function(req, res) {
         // create takes an argument of an object describing the item we want to
         // insert into our table. In this case we just we pass in an object with a text
@@ -21,14 +24,15 @@ module.exports = function(app){
         db.User.create({
             email: req.body.email,
         }).then(function(dbUser) {
-          // We have access to the new todo as an argument inside of the callback function
+         
           res.json(dbUser);
         })
           .catch(function(err) {
+            console.log(err.message)
           // Whenever a validation or flag fails, an error is thrown
           // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-            res.json(err);
-          });
+           res.json(err.message);
+          })
       });
 
 
