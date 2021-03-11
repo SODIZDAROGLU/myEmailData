@@ -1,5 +1,4 @@
-const { SequelizeScopeError } = require("sequelize/lib/errors");
-const { Sequelize } = require("../models");
+
 var db = require("../models");
 
 module.exports = function(app){
