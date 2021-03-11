@@ -36,16 +36,5 @@ module.exports = function(app){
       });
 
 
-             // Add a data
-//   app.post("/api/new", function(req, res) {
-//     console.log("Folder Data:");
-//     console.log(req.body);
-//     db.User.create({
-//       email: req.body.email,
-     
-    
-//     }).then(function(dbUser) {
-//       res.json(dbUser);
-//     });
-//   });
+
 }

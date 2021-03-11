@@ -16,9 +16,7 @@ $("#form").on("submit", function (event) {
          if (!data && IsEmail(emailChecked) ){
         $("#error").html("😄Success..!!!");
       } 
-      // if (!data && IsEmail(emailChecked)){
-      //   $("#error").html("😄Success..!!!");
-      // } 
+    
     });
     
     var newMember = {
